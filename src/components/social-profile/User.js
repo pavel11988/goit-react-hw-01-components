@@ -1,31 +1,41 @@
 import PropTypes from 'prop-types';
 import css from './User.module.css';
-import { Card } from './User.styled.jsx';
+import {
+  Card,
+  Info,
+  Avatar,
+  Username,
+  Tag,
+  Location,
+  StatisticList,
+  StatisticItem,
+  StatisticValue,
+} from './User.styled.jsx';
 
 const User = ({ username, tag, location, avatar, stats }) => {
   return (
     <Card>
-      <div className={css.userInfo}>
-        <img src={avatar} alt="User avatar" className={css.avatar} />
-        <p className={css.username}>{username}</p>
-        <p className={css.tag}>@{tag}</p>
-        <p className={css.location}>{location}</p>
-      </div>
+      <Info>
+        <Avatar src={avatar} alt="User avatar" />
+        <Username>{username}</Username>
+        <Tag>@{tag}</Tag>
+        <Location>{location}</Location>
+      </Info>
 
-      <ul className={css.statList}>
-        <li className={css.statItem}>
-          <span>Followers</span>
-          <span className={css.statValue}>{stats.followers}</span>
-        </li>
-        <li className={css.statItem}>
-          <span>Views</span>
-          <span className={css.statValue}>{stats.views}</span>
-        </li>
-        <li className={css.statItem}>
-          <span>Likes</span>
-          <span className={css.statValue}>{stats.likes}</span>
-        </li>
-      </ul>
+      <StatisticList>
+        <StatisticItem>
+          Followers
+          <StatisticValue>{stats.followers}</StatisticValue>
+        </StatisticItem>
+        <StatisticItem>
+          Views
+          <StatisticValue>{stats.views}</StatisticValue>
+        </StatisticItem>
+        <StatisticItem>
+          Likes
+          <StatisticValue>{stats.likes}</StatisticValue>
+        </StatisticItem>
+      </StatisticList>
     </Card>
   );
 };
