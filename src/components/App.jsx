@@ -7,10 +7,12 @@ import statisticData from './statistics/data.json';
 import TransactionHistory from './transaction-history/Transaction';
 import transactions from './transaction-history/transactions.json';
 
+import { Container, FriendList } from './App.styled';
+
 export default function App() {
   return (
-    <div>
-      <ul>
+    <Container>
+      <FriendList>
         {friends.map(friend => (
           <Friend
             key={friend.id}
@@ -19,18 +21,16 @@ export default function App() {
             name={friend.name}
           />
         ))}
-      </ul>
+      </FriendList>
 
-      <div>
-        <Profile
-          key={user.tag}
-          avatar={user.avatar}
-          username={user.username}
-          tag={user.tag}
-          location={user.location}
-          stats={user.stats}
-        />
-      </div>
+      <Profile
+        key={user.tag}
+        avatar={user.avatar}
+        username={user.username}
+        tag={user.tag}
+        location={user.location}
+        stats={user.stats}
+      />
 
       <section>
         <h2>Upload stats</h2>
@@ -65,6 +65,6 @@ export default function App() {
           ))}
         </tbody>
       </table>
-    </div>
+    </Container>
   );
 }

@@ -1,30 +1,32 @@
 import PropTypes from 'prop-types';
+import css from './User.module.css';
+import { Card } from './User.styled.jsx';
 
 const User = ({ username, tag, location, avatar, stats }) => {
   return (
-    <div>
-      <div>
-        <img src={avatar} alt="User avatar" />
-        <p>{username}</p>
-        <p>@{tag}</p>
-        <p>{location}</p>
+    <Card>
+      <div className={css.userInfo}>
+        <img src={avatar} alt="User avatar" className={css.avatar} />
+        <p className={css.username}>{username}</p>
+        <p className={css.tag}>@{tag}</p>
+        <p className={css.location}>{location}</p>
       </div>
 
-      <ul>
-        <li>
+      <ul className={css.statList}>
+        <li className={css.statItem}>
           <span>Followers</span>
-          <span>{stats.followers}</span>
+          <span className={css.statValue}>{stats.followers}</span>
         </li>
-        <li>
+        <li className={css.statItem}>
           <span>Views</span>
-          <span>{stats.views}</span>
+          <span className={css.statValue}>{stats.views}</span>
         </li>
-        <li>
+        <li className={css.statItem}>
           <span>Likes</span>
-          <span>{stats.likes}</span>
+          <span className={css.statValue}>{stats.likes}</span>
         </li>
       </ul>
-    </div>
+    </Card>
   );
 };
 
