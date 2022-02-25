@@ -7,7 +7,16 @@ import statisticData from './statistics/data.json';
 import TransactionHistory from './transaction-history/Transaction';
 import transactions from './transaction-history/transactions.json';
 
-import { Container, FriendList } from './App.styled';
+import {
+  Container,
+  FriendList,
+  StatisticUpload,
+  StatisticTitle,
+  StatisticList,
+  Transactions,
+  TransactionsNames,
+  TransactionsValues,
+} from './App.styled';
 
 export default function App() {
   return (
@@ -32,9 +41,9 @@ export default function App() {
         stats={user.stats}
       />
 
-      <section>
-        <h2>Upload stats</h2>
-        <ul>
+      <StatisticUpload>
+        <StatisticTitle>Upload stats</StatisticTitle>
+        <StatisticList>
           {statisticData.map(data => (
             <Statistic
               key={data.id}
@@ -42,19 +51,17 @@ export default function App() {
               percentage={data.percentage}
             />
           ))}
-        </ul>
-      </section>
+        </StatisticList>
+      </StatisticUpload>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Type</th>
-            <th>Amount</th>
-            <th>Currency</th>
-          </tr>
-        </thead>
+      <Transactions>
+        <TransactionsNames>
+          <th>Type</th>
+          <th>Amount</th>
+          <th>Currency</th>
+        </TransactionsNames>
 
-        <tbody>
+        <TransactionsValues>
           {transactions.map(transaction => (
             <TransactionHistory
               key={transaction.id}
@@ -63,8 +70,8 @@ export default function App() {
               currency={transaction.currency}
             />
           ))}
-        </tbody>
-      </table>
+        </TransactionsValues>
+      </Transactions>
     </Container>
   );
 }

@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import css from './User.module.css';
 import {
   Card,
   Info,

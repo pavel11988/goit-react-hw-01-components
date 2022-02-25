@@ -44,6 +44,7 @@ export const StatisticList = styled.ul`
   display: flex;
   list-style: none;
   margin: 0;
+  padding: 0;
   background-color: rgb(224, 224, 224);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
