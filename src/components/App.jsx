@@ -11,7 +11,6 @@ import {
   Container,
   FriendList,
   StatisticUpload,
-  StatisticTitle,
   StatisticList,
   Transactions,
   TransactionsNames,
@@ -42,7 +41,7 @@ export default function App() {
       />
 
       <StatisticUpload>
-        <StatisticTitle>Upload stats</StatisticTitle>
+        <h2>Upload stats</h2>
         <StatisticList>
           {statisticData.map(data => (
             <Statistic

@@ -17,9 +17,6 @@ export const StatisticUpload = styled.section`
   border: 1px solid gray;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-`;
-
-export const StatisticTitle = styled.h2`
   text-align: center;
 `;
 
