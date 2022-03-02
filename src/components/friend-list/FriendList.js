@@ -1,32 +1,24 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
+import { Friend } from './Friend';
+import { List } from './FriendList.styled';
 
-// import {
-//   Card,
-//   StatusOnline,
-//   StatusOffline,
-//   Avatar,
-//   Name,
-// } from './Friend.styled';
+export const FriendList = ({ friends }) => {
+  return (
+    <List>
+      {friends.map(({ id, isOnline, avatar, name }) => (
+        <Friend key={id} isOnline={isOnline} avatar={avatar} name={name} />
+      ))}
+    </List>
+  );
+};
 
-// // const Friend = ({ avatar, name, isOnline, id }) => {
-// //   return (
-// //     <Card>
-// //       {isOnline ? <StatusOnline /> : <StatusOffline />}
-// //       <Avatar src={avatar} alt={'photo ' + name} width="100" />
-// //       <Name>{name}</Name>
-// //     </Card>
-// //   );
-// // };
-
-// export const Friends = ({ friends }) => {
-//   return <div>friends.map*e()</div>;
-// };
-
-// Friend.propTypes = {
-//   avatar: PropTypes.string,
-//   name: PropTypes.string,
-//   isOnline: PropTypes.bool,
-//   id: PropTypes.number,
-// };
-
-// export default Friend;
+FriendList.propTypes = {
+  friends: PropTypes.arrayOf(
+    PropTypes.exact({
+      avatar: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      isOnline: PropTypes.bool.isRequired,
+      id: PropTypes.number.isRequired,
+    })
+  ),
+};

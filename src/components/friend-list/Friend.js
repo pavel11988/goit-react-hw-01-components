@@ -8,7 +8,7 @@ import {
   Name,
 } from './Friend.styled';
 
-const Friend = ({ avatar, name, isOnline, id }) => {
+export const Friend = ({ avatar, name, isOnline, id }) => {
   return (
     <Card>
       {isOnline ? <StatusOnline /> : <StatusOffline />}
@@ -24,5 +24,3 @@ Friend.propTypes = {
   isOnline: PropTypes.bool,
   id: PropTypes.number,
 };
-
-export default Friend;

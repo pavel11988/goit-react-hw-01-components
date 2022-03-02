@@ -9,7 +9,7 @@ export const FriendList = styled.ul`
   margin: 0;
 `;
 
-export const StatisticUpload = styled.section`
+export const StatisticList = styled.section`
   max-width: max-content;
   background-color: azure;
   padding-top: 15px;
@@ -18,13 +18,8 @@ export const StatisticUpload = styled.section`
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   text-align: center;
-`;
-
-export const StatisticList = styled.ul`
   display: flex;
-  padding: 0;
-  margin: 0;
-}
+  felx-direction: column;
 `;
 
 export const Transactions = styled.table`

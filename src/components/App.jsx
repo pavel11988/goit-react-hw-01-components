@@ -1,17 +1,17 @@
-import Friend from './friend-list/Friend';
 import friends from './friend-list/friends.json';
+import { FriendList } from './friend-list/FriendList';
+
 import Profile from './social-profile/User';
 import user from './social-profile/user.json';
-import Statistic from './statistics/Statistics';
-import statisticData from './statistics/data.json';
+
+import statistic from './statistics/data.json';
+import { StatisticList } from './statistics/StatisticList';
+
 import TransactionHistory from './transaction-history/Transaction';
 import transactions from './transaction-history/transactions.json';
 
 import {
   Container,
-  FriendList,
-  StatisticUpload,
-  StatisticList,
   Transactions,
   TransactionsNames,
   TransactionsValues,
@@ -20,16 +20,7 @@ import {
 export default function App() {
   return (
     <Container>
-      <FriendList>
-        {friends.map(friend => (
-          <Friend
-            key={friend.id}
-            isOnline={friend.isOnline}
-            avatar={friend.avatar}
-            name={friend.name}
-          />
-        ))}
-      </FriendList>
+      <FriendList friends={friends}></FriendList>
 
       <Profile
         key={user.tag}
@@ -40,18 +31,7 @@ export default function App() {
         stats={user.stats}
       />
 
-      <StatisticUpload>
-        <h2>Upload stats</h2>
-        <StatisticList>
-          {statisticData.map(data => (
-            <Statistic
-              key={data.id}
-              label={data.label}
-              percentage={data.percentage}
-            />
-          ))}
-        </StatisticList>
-      </StatisticUpload>
+      <StatisticList statistic={statistic}></StatisticList>
 
       <Transactions>
         <TransactionsNames>
