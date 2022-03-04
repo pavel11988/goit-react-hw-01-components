@@ -7,15 +7,10 @@ import user from './social-profile/user.json';
 import statistic from './statistics/data.json';
 import { StatisticList } from './statistics/StatisticList';
 
-import TransactionHistory from './transaction-history/Transaction';
+import { TransactionsTable } from './transaction-history/TransactionsTable';
 import transactions from './transaction-history/transactions.json';
 
-import {
-  Container,
-  Transactions,
-  TransactionsNames,
-  TransactionsValues,
-} from './App.styled';
+import { Container } from './App.styled';
 
 export default function App() {
   return (
@@ -33,24 +28,7 @@ export default function App() {
 
       <StatisticList statistic={statistic}></StatisticList>
 
-      <Transactions>
-        <TransactionsNames>
-          <th>Type</th>
-          <th>Amount</th>
-          <th>Currency</th>
-        </TransactionsNames>
-
-        <TransactionsValues>
-          {transactions.map(transaction => (
-            <TransactionHistory
-              key={transaction.id}
-              type={transaction.type}
-              amount={transaction.amount}
-              currency={transaction.currency}
-            />
-          ))}
-        </TransactionsValues>
-      </Transactions>
+      <TransactionsTable transactions={transactions}></TransactionsTable>
     </Container>
   );
 }

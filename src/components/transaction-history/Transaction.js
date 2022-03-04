@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { TransactionRow, TransactionCol } from './Transactions.styled';
 
-const Transaction = ({ id, type, amount, currency }) => {
+export const Transaction = ({ id, type, amount, currency }) => {
   return (
     <TransactionRow>
       <TransactionCol>{type}</TransactionCol>
@@ -17,5 +17,3 @@ Transaction.propTypes = {
   amount: PropTypes.string,
   currency: PropTypes.string,
 };
-
-export default Transaction;
