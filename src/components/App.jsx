@@ -27,6 +27,7 @@ export default function App() {
       />
 
       <StatisticList title="Upload stats" statistic={statistic}></StatisticList>
+      <StatisticList statistic={statistic}></StatisticList>
 
       <TransactionsTable transactions={transactions}></TransactionsTable>
     </Container>

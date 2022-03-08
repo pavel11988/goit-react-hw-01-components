@@ -12,9 +12,11 @@ export const TransactionsTable = ({ transactions }) => {
   return (
     <Table>
       <TransactionsNames>
-        {<th>Type</th>}
-        {<th>Amount</th>}
-        {<th>Currency</th>}
+        <tr>
+          <th>Type</th>
+          <th>Amount</th>
+          <th>Currency</th>
+        </tr>
       </TransactionsNames>
 
       <TransactionsValues>

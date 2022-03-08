@@ -21,7 +21,7 @@ StatisticList.propTypes = {
     PropTypes.exact({
       label: PropTypes.string.isRequired,
       percentage: PropTypes.number.isRequired,
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
     })
   ),
 };
