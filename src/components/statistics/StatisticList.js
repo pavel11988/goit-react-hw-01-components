@@ -1,13 +1,12 @@
 import PropTypes from 'prop-types';
 import { Statistic } from './Statistics';
-import { List, Title, Info } from 'components/statistics/StatisticList.styled';
+import { List, Info } from 'components/statistics/StatisticList.styled';
+import { StatisticTitle } from './StatisticTitle';
 
-export const StatisticList = ({ statistic }) => {
+export const StatisticList = ({ statistic, title }) => {
   return (
     <Info>
-      <Title>
-        <h2>Upload stats</h2>
-      </Title>
+      <StatisticTitle title={title} />
       <List>
         {statistic.map(({ id, label, percentage }) => (
           <Statistic key={id} label={label} percentage={percentage} />
